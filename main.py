@@ -1,7 +1,7 @@
 from buku import Buku
 from perpustakaan import Perpustakaan
 
-# input tidak boleh kosong dan tidak boleh ada tanda |
+
 def tampilkan_semua(self):
         if len(self.data_buku) == 0:
             print("Belum ada data buku.")
@@ -10,6 +10,7 @@ def tampilkan_semua(self):
             self.data_buku[kode].tampilkan_info()
             print("-" * 30)
 
+# input tidak boleh kosong dan tidak boleh ada tanda |
 def input_wajib(pesan):
     while True:
         isi = input(pesan).strip()
