@@ -2,15 +2,6 @@ from buku import Buku
 from perpustakaan import Perpustakaan
 
 
-def tampilkan_semua(self):
-        if len(self.data_buku) == 0:
-            print("Belum ada data buku.")
-            return
-        for kode in self.data_buku:
-            self.data_buku[kode].tampilkan_info()
-            print("-" * 30)
-
-
 # input tidak boleh kosong dan tidak boleh ada tanda |
 def input_wajib(pesan):
     while True:
@@ -63,4 +54,5 @@ def main():
             print("Pilihan tidak valid.")
 
 
-main()
+if __name__ == "__main__":
+    main()
