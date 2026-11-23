@@ -10,6 +10,7 @@ def tampilkan_semua(self):
             self.data_buku[kode].tampilkan_info()
             print("-" * 30)
 
+
 # input tidak boleh kosong dan tidak boleh ada tanda |
 def input_wajib(pesan):
     while True:
@@ -61,5 +62,5 @@ def main():
         else:
             print("Pilihan tidak valid.")
 
-if __name__ == "__main__":
-    main()
+
+main()
