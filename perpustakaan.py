@@ -1,7 +1,7 @@
 from buku import Buku
 
 class Perpustakaan:
-    def __init__(self, nama_file):
+    def init(self, nama_file):
         self.nama_file = nama_file
         self.data_buku = {}
         self.muat_data()
@@ -82,4 +82,3 @@ class Perpustakaan:
     
             self.simpan_data()
             print("Buku berhasil diperbarui.")
-            
