@@ -1,22 +1,24 @@
 from buku import Buku
 
-def muat_data(self):
+class Perpustakaan:
+    def init(self, nama_file):
+        self.nama_file = nama_file
+        self.data_buku = {}
+        self.muat_data()
+
+    def muat_data(self):
         self.data_buku = {}
         try:
             file = open(self.nama_file, "r")
             for baris in file:
-                baris_bersih = baris.strip()
-                if baris_bersih != "":
-                    potongan = baris_bersih.split("|")
-                    if len(potongan) == 5:
-                        kode = potongan[0]
-                        judul = potongan[1]
-                        penulis = potongan[2]
-                        penerbit = potongan[3]
-                        tahun = potongan[4]
-
-                        buku = Buku(kode, judul, penulis, penerbit, tahun)
-                        self.data_buku[kode] = buku
+                baris = baris.strip()
+                if baris == "":
+                    continue
+                bagian = baris.split("|")
+                if len(bagian) == 5:
+                    buku = Buku(bagian[0], bagian[1], bagian[2],
+                                bagian[3], bagian[4])
+                    self.data_buku[buku.kode] = buku
             file.close()
         except FileNotFoundError:
             pass
@@ -24,9 +26,7 @@ def muat_data(self):
     def simpan_data(self):
         file = open(self.nama_file, "w")
         for kode in self.data_buku:
-            buku_sekarang = self.data_buku[kode]
-            teks_buku = buku_sekarang.ke_baris()
-            file.write(teks_buku + "\n")
+            file.write(self.data_buku[kode].ke_baris() + "\n")
         file.close()
 
     def tambah_buku(self, buku):
