@@ -1,7 +1,6 @@
 from buku import Buku
 from perpustakaan import Perpustakaan
 
-# input tidak boleh kosong dan tidak boleh ada tanda |
 def input_wajib(pesan):
     while True:
         isi = input(pesan).strip()
